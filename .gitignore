@@ -1,5 +1,6 @@
 *.pyc
 build/
+docs/_build
 src/
 pip-log.txt
 *DS_Store
