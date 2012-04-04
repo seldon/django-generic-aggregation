@@ -1,13 +1,18 @@
-==========================
-django-generic-aggregation
-==========================
+.. -*- mode: rst -*-
 
-annotate() and aggregate() for generically-related data.
+=================
+ Getting started
+=================
+
+Just to get you started, below we list some basic usage examples; for a detailed description of the generic DB
+aggregation API provided by ``django-generic-aggregation``, see :doc:`here <api>`.
 
 Examples
---------
+========
 
-You want the most commented on blog entries::
+Suppose you have a ``BlogEntry`` model and want to retrieve the most commented on blog entries:
+
+.. sourcecode:: python
 
     >>> from django.contrib.comments.models import Comment
     >>> from django.db.models import Count
@@ -24,11 +29,13 @@ You want the most commented on blog entries::
     Nobody commented 0
 
 
-You want to figure out which items are highest rated::
+Now, suppose you have a ``Food`` model and a generic ``Rating`` model; if you want to figure out which items have the
+highest rating, you can proceed as follows:
+
+.. sourcecode:: python
 
     from django.db.models import Sum, Avg
 
-    # assume a Food model and a generic Rating model
     apple = Food.objects.create(name='apple')
     
     # create some ratings on the food
@@ -45,4 +52,5 @@ You want to figure out which items are highest rated::
     5
 
 
-Check the tests - there are more examples there.  Tested with postgres & sqlite
+
+   
